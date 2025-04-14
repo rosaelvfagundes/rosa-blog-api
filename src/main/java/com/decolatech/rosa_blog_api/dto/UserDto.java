@@ -16,12 +16,4 @@ public record UserDto(
         Optional.ofNullable(user.getImage())
     );
   }
-
-  public User toEntity() {
-    User user = new User();
-    user.setDisplayName(displayName);
-    user.setEmail(email);
-    user.setImage(String.valueOf(image));
-    return user;
-  }
 }

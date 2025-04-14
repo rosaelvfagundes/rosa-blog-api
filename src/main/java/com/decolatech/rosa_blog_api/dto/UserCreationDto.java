@@ -23,15 +23,6 @@ public record UserCreationDto(
 
     Optional<String> image
 ) {
-  public static UserCreationDto fromEntity(User user) {
-    return new UserCreationDto(
-        user.getDisplayName(),
-        user.getEmail(),
-        user.getPassword(),
-        Optional.ofNullable(user.getImage())
-    );
-  }
-
   public User toEntity() {
     User user = new User();
     user.setDisplayName(displayName);

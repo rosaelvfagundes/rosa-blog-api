@@ -5,6 +5,8 @@ import com.decolatech.rosa_blog_api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
   private UserRepository userRepository;
@@ -12,6 +14,10 @@ public class UserService {
   @Autowired
   public UserService(UserRepository userRepository) {
     this.userRepository = userRepository;
+  }
+
+  public List<User> getUsers() {
+    return userRepository.findAll();
   }
 
   public User createUser(User user) {
